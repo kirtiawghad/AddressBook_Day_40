@@ -1,5 +1,4 @@
 class Contact{
-
     constructor(...params){
         this.firstName = params[0];
         this.lastName = params[1];
@@ -101,8 +100,12 @@ try{
     let sarvesh =new Contact("Sarvesh","Pednekar","Ramoday ","Mumbai","Mahrashtra",401078,8934523412,"Sarvesh12@gmail.com")
     addressBook.push(romil)
     addressBook.push(sarvesh)
+addressBook.filter(x=>x.firstName=="Sarvesh").forEach(x=>{x.firstName="Dev";console.log(x.toString())})
+let k 
+addressBook.forEach(x=>{if(x.firstName=="Romil"){ 
+    k = addressBook.indexOf(x)
+    addressBook.splice(k,1)}})
 console.log(addressBook.forEach(x=>console.log(x.toString())))
 }catch(e){
     console.error(e)
 }
-addressBook.filter(x=>x.firstName=="Romil").forEach(x=>{x.firstName="Vicki";console.log(x.toString())})
