@@ -97,11 +97,12 @@ class Contact{
 }
 let addressBook = new Array()
 try{
-let romil =new Contact("Romil","Ghadage","Lalbaug","Mumbai","Mahrashtra",40003,1234567890,"Romil231@gmail.com")
-let sarvesh =new Contact("Sarvesh","Pednekar","Ramoday ","Mumbai","Mahrashtra",401078,8934523412,"Sarvesh12@gmail.com")
-addressBook.push(romil)
-addressBook.push(sarvesh)
+    let romil =new Contact("Romil","Ghadage","Lalbaug","Mumbai","Mahrashtra",40003,1234567890,"Romil231@gmail.com")
+    let sarvesh =new Contact("Sarvesh","Pednekar","Ramoday ","Mumbai","Mahrashtra",401078,8934523412,"Sarvesh12@gmail.com")
+    addressBook.push(romil)
+    addressBook.push(sarvesh)
 console.log(addressBook.forEach(x=>console.log(x.toString())))
 }catch(e){
     console.error(e)
 }
+addressBook.filter(x=>x.firstName=="Romil").forEach(x=>{x.firstName="Vicki";console.log(x.toString())})
