@@ -81,7 +81,7 @@ class Contact{
         return this._phoneNumber
     }
     set email(email) {
-        let nameRegex = RegExp('^[A-Za-z0-9]{3,}[.]?[a-z]*@([a-z]+)[.]?[a-z]+[.]?[a-z]*$');
+        let nameRegex = RegExp('^[A-Za-z]{3,}[.]?[a-z0-9]*@([a-z]+)[.]?[a-z]+[.]?[a-z]*$');
         if(nameRegex.test(email)){
             this._email = email;
         }
@@ -95,9 +95,13 @@ class Contact{
         return (`First Name: ${this.firstName} \nLast Name: ${this.lastName}\nAddress: ${this.address}\nCity : ${this.city}\nState : ${this.state}\nZip code : ${this.zip}\nPhone Number : ${this.phoneNumber}\nEmail ID: ${this.email}`)
     }
 }
+let addressBook = new Array()
 try{
-    let romil =new Contact("Romil","Ghadage","Lalbaug","Mumbai","Mahrashtra",40003,1234567890,"Romil23@gmail.com")
-    console.log(romil.toString())
+let romil =new Contact("Romil","Ghadage","Lalbaug","Mumbai","Mahrashtra",40003,1234567890,"Romil231@gmail.com")
+let sarvesh =new Contact("Sarvesh","Pednekar","Ramoday ","Mumbai","Mahrashtra",401078,8934523412,"Sarvesh12@gmail.com")
+addressBook.push(romil)
+addressBook.push(sarvesh)
+console.log(addressBook.forEach(x=>console.log(x.toString())))
 }catch(e){
     console.error(e)
 }
